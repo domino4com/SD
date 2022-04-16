@@ -3,7 +3,7 @@ Instead of listing a complete example here, you will find the code change to the
 
 ## The Arduino Example
 - Use a **micro** SD Card with 32Gb or less of capacity and insert into the CWV SD Card holder.
-- Open the Example: File -> Examples -> SD (Under 'Examples for ESP32...') -> SD_Test
+- Open the Example: File :point_right: Examples :point_right: SD (Under `Examples for ESP32`...) :point_right: SD_Test
 - Find this line `if (!SD.begin()) {`
 - And overwrite that line with this:
 
@@ -23,7 +23,8 @@ Instead of listing a complete example here, you will find the code change to the
 - The SD Card sits on GPIO5 as Chip Select (CS)
 
 ### Before
+![before](assets/before.png)
 
 ### After
-
+![after](assets/after.png)
 
