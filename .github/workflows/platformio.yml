@@ -5,6 +5,7 @@ on:
     paths:
       - examples/**
       - src/**
+      - .github/workflows/platformio.yml
   pull_request:
   release:
     types:

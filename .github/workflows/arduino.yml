@@ -5,6 +5,7 @@ on:
     paths:
       - examples/**
       - src/**
+      - .github/workflows/arduino.yml
   pull_request:
   release:
     types:
