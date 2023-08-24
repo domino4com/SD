@@ -18,16 +18,16 @@ def find_port():
 
 
 def get_file_from_esp32(file_name, port_name):
-    with serial.Serial(port_name, 115200, timeout=1) as ser:
-        ser.reset_input_buffer()
-        ser.reset_output_buffer()
+    with serial.Serial(port_name, 115200, timeout=1) as UART:
+        UART.reset_input_buffer()
+        UART.reset_output_buffer()
         command = f"GET_FILE {file_name}\n"
-        ser.write(command.encode("utf-8"))
+        UART.write(command.encode("utf-8"))
         attempts = 300
         while attempts > 0:
-            start_marker = ser.readline().decode("utf-8").strip()
+            start_marker = UART.readline().decode("utf-8").strip()
             if start_marker == "START_OF_FILE":
-                content = ser.read_until("END_OF_FILE").decode("utf-8")
+                content = UART.read_until("END_OF_FILE").decode("utf-8")
                 content = "[" + content.rsplit("\n", 2)[0][:-2] + "]"
                 # print(content[-200:])
                 json_content = loads(content, object_pairs_hook=OrderedDict)
@@ -95,11 +95,11 @@ if __name__ == "__main__":
     command = args.command
 
     if command == "DELETEALL":
-        with serial.Serial(port, 115200, timeout=1) as ser:
-            ser.reset_input_buffer()
-            ser.reset_output_buffer()
+        with serial.Serial(port, 115200, timeout=1) as UART:
+            UART.reset_input_buffer()
+            UART.reset_output_buffer()
             command = f"DELETEALL\n"
-            ser.write(command.encode("utf-8"))
+            UART.write(command.encode("utf-8"))
 
     elif command == "TRANSFER":
         if args.file is None:
@@ -112,14 +112,14 @@ if __name__ == "__main__":
             save_file_to_disk(file_name, file_content, json_content)
 
     elif command == "LISTDIR":
-        with serial.Serial(port, 115200, timeout=1) as ser:
-            ser.reset_input_buffer()
-            ser.reset_output_buffer()
+        with serial.Serial(port, 115200, timeout=1) as UART:
+            UART.reset_input_buffer()
+            UART.reset_output_buffer()
             command = f"LISTDIR\n"
-            ser.write(command.encode("utf-8"))
+            UART.write(command.encode("utf-8"))
             sleep(2)
-            while ser.in_waiting:
-                print(ser.readline().decode("utf-8").strip())
+            while UART.in_waiting:
+                print(UART.readline().decode("utf-8").strip())
 
     else:
         parser.parse_args(["-h"])
