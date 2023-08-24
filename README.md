@@ -1,3 +1,11 @@
+:repository-owner: domino4com
+:repository-name: SD
+
+[![PlatformIO](https://github.com/domino4com/SD/actions/workflows/platformio.yml/badge.svg)](https://github.com/domino4com/SD/actions/workflows/platformio.yml)
+[![Arduino](https://github.com/domino4com/SD/actions/workflows/arduino.yml/badge.svg)](https://github.com/domino4com/SD/actions/workflows/arduino.yml)
+image:https://github.com/{repository-owner}/{repository-name}/actions/workflows/spell_check.yml/badge.svg["Spell Check status", link="https://github.com/{repository-owner}/{repository-name}/actions/workflows/spell_check.yml"]
+
+
 # Using the SD Card on The Extended Core (CWV)
 Instead of listing a complete example here, you will find the code change to the existing SD Card Example in Arduino already. This way when the SD Card Example is updated, this example will not be outdated. It also very specific show what is different from the existing example.
 
