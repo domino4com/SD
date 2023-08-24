@@ -1,6 +1,6 @@
 /*!
  * @file SDx.cpp
- * @brief Set data to SD Card
+ * @brief Set data to SD Card, and communicate with Python program
  * @n ...
  * @copyright   MIT License
  * @author [Bjarke Gotfredsen](bjarke@gotfredsen.com)
