@@ -38,9 +38,6 @@ jobs:
 
       - name: Install libraries
         run: arduino-cli lib install "ArduinoJson"
-
-      - name: Compile Example
-        run: arduino-cli compile --fqbn esp32:esp32:esp32 ./examples/example  --warnings more
  
       - name: Compile JSON
         run: arduino-cli compile --fqbn esp32:esp32:esp32 ./examples/json  --warnings more

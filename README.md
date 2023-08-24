@@ -1,9 +1,6 @@
-:repository-owner: domino4com
-:repository-name: SD
-
 [![PlatformIO](https://github.com/domino4com/SD/actions/workflows/platformio.yml/badge.svg)](https://github.com/domino4com/SD/actions/workflows/platformio.yml)
 [![Arduino](https://github.com/domino4com/SD/actions/workflows/arduino.yml/badge.svg)](https://github.com/domino4com/SD/actions/workflows/arduino.yml)
-image:https://github.com/{repository-owner}/{repository-name}/actions/workflows/spell_check.yml/badge.svg["Spell Check status", link="https://github.com/{repository-owner}/{repository-name}/actions/workflows/spell_check.yml"]
+[![Spell Check](https://github.com/domino4com/SD/actions/workflows/spell_check.yml/badge.svg)](https://github.com/domino4com/SD/actions/workflows/spell_check.yml)
 
 
 # Using the SD Card on The Extended Core (CWV)
@@ -36,3 +33,21 @@ Instead of listing a complete example here, you will find the code change to the
 ### After
 ![after](assets/after.png)
 
+# Library Use
+This repository contains a library with allow a Python program to interact with the SD Card in the xChip, while the xChip is connected to your computer over USB.
+The Python program `SDworks.py` (which you find in this repository), has 3 commands:
+
+### LISTDIR
+This list all the files in the root folder of the SD Card
+
+### DELETEALL
+This deletes all the files (not folders) in the root folder
+
+### TRANSFER
+This transfers a file, such as `data0000.json` to your computer, but also makes a Comma Separated Values file (.csv) and an Excel file (.xlsx)
+
+## Installation
+You obvisouly need Python. And then some packages you can install with 
+```bash
+$ pip install -r requirements.txt
+```
