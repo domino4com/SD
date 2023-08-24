@@ -37,7 +37,9 @@ jobs:
           arduino-cli core install esp32:esp32
 
       - name: Install libraries
-        run: arduino-cli lib install "ArduinoJson"
+        run: |
+          arduino-cli lib install "ArduinoJson"
+          arduino-cli lib install --git-url https://github.com/domino4com/IWA
  
       - name: Compile JSON
         run: arduino-cli compile --fqbn esp32:esp32:esp32 ./examples/json  --warnings more
